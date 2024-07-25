@@ -18,10 +18,10 @@ function App() {
       return;
     }
 
-    // Construct the URL with query parameters https://bo-cilent-updated.vercel.app/
+    // Construct the URL with query parameters https://bo-server-side-1.onrender.com/
     // const message = `${domain}/${clientId}/${month}/${year}`;
     // const iframeUrl = `http://localhost:${port}/?message=${encodeURIComponent(message)}`;
-    const url = `https://bo-cilent.vercel.app/?domain=${encodeURIComponent(domain)}&clientId=${encodeURIComponent(clientId)}&month=${encodeURIComponent(month)}&year=${encodeURIComponent(year)}`
+    const url = `https://bo-server-side-1.onrender.com/?domain=${encodeURIComponent(domain)}&clientId=${encodeURIComponent(clientId)}&month=${encodeURIComponent(month)}&year=${encodeURIComponent(year)}`
     // Create the iframe
     const iframe = document.createElement("iframe");
     console.log('iframe =', iframe);
