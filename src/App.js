@@ -22,7 +22,7 @@ function App() {
     // for mongo database username and password --> pankajiitr87 and a3kwmdDoE9xGpi5n
     // const message = `${domain}/${clientId}/${month}/${year}`;
     // const iframeUrl = `http://localhost:${port}/?message=${encodeURIComponent(message)}`;
-    const url = `https://bo-server-side.onrender.com/?domain=${encodeURIComponent(domain)}&clientId=${encodeURIComponent(clientId)}&month=${encodeURIComponent(month)}&year=${encodeURIComponent(year)}`
+    const url = `https://bo-cilent.onrender.com/?domain=${encodeURIComponent(domain)}&clientId=${encodeURIComponent(clientId)}&month=${encodeURIComponent(month)}&year=${encodeURIComponent(year)}`
     // Create the iframe
     const iframe = document.createElement("iframe");
     console.log('iframe =', iframe);
