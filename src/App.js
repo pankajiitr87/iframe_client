@@ -19,6 +19,7 @@ function App() {
     }
 
     // Construct the URL with query parameters https://bo-server-side-1.onrender.com/
+    // for mongo database username and password --> pankajiitr87 and a3kwmdDoE9xGpi5n
     // const message = `${domain}/${clientId}/${month}/${year}`;
     // const iframeUrl = `http://localhost:${port}/?message=${encodeURIComponent(message)}`;
     const url = `https://bo-server-side.onrender.com/?domain=${encodeURIComponent(domain)}&clientId=${encodeURIComponent(clientId)}&month=${encodeURIComponent(month)}&year=${encodeURIComponent(year)}`
