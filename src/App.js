@@ -14,8 +14,8 @@ function App() {
   // Function to open the iframe and send a message
   const openFrameAndSendMessage = () => {
     
-    if (!port) {
-      alert("Please enter a port number");
+    if (!date || !clientId) {
+      alert("Please enter a Client Id and Date");
       return;
     }
 
