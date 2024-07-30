@@ -9,6 +9,7 @@ function App() {
   const [month, setMonth] = useState("");
   const [year, setYear] = useState("")
   const [port, setPort] = useState(""); // State to store the port input
+  const [date, setDate] = useState(""); // State to store the selected date
 
   // Function to open the iframe and send a message
   const openFrameAndSendMessage = () => {
@@ -22,7 +23,7 @@ function App() {
     // for mongo database username and password --> pankajiitr87 and a3kwmdDoE9xGpi5n
     // const message = `${domain}/${clientId}/${month}/${year}`;
     // const iframeUrl = `http://localhost:${port}/?message=${encodeURIComponent(message)}`;
-    const url = `https://bo-cilent.vercel.app/?domain=${encodeURIComponent(domain)}&clientId=${encodeURIComponent(clientId)}&month=${encodeURIComponent(month)}&year=${encodeURIComponent(year)}`
+    const url = `https://bo-cilent.vercel.app/?clientId=${encodeURIComponent(clientId)}&date=${encodeURIComponent(date)}`
     // Create the iframe
     const iframe = document.createElement("iframe");
     console.log('iframe =', iframe);
@@ -68,29 +69,14 @@ function App() {
       <header className="App-header">
         <header>To view dashboard add data in below boxes and click on Open IFRAME button</header>
         <input 
-          placeholder='Type Domain here' 
-          value={domain} 
-          onChange={(e) => setDomain(e.target.value)} // Update the domain state
-        />
-        <input 
           placeholder='Type Client Id here' 
           value={clientId} 
           onChange={(e) => setClientId(e.target.value)} // Update the clientId state
         />
         <input 
-          placeholder='Type Month here' 
-          value={month} 
-          onChange={(e) => setMonth(e.target.value)} // Update the clientId state
-        />
-        <input 
-          placeholder='Type Year here' 
-          value={year} 
-          onChange={(e) => setYear(e.target.value)} // Update the clientId state
-        />
-        <input 
-          placeholder='Type Port Number here' 
-          value={port} 
-          onChange={(e) => setPort(e.target.value)} // Update the port state
+          type='date' 
+          value={date} 
+          onChange={(e) => setDate(e.target.value)} // Update the date state
         />
         <button onClick={openFrameAndSendMessage}>Open IFRAME</button>
       </header>
