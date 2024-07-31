@@ -22,7 +22,7 @@ function App() {
     // Construct the URL with query parameters https://bo-server-side-1.onrender.com/
     // for mongo database username and password --> pankajiitr87 and a3kwmdDoE9xGpi5n
     // const message = `${domain}/${clientId}/${month}/${year}`;
-    // const iframeUrl = `http://localhost:${port}/?message=${encodeURIComponent(message)}`;
+    // const iframeUrl = `http://localhost:3000/?message=${encodeURIComponent(message)}`;
     const url = `https://bo-cilent.vercel.app/?clientId=${encodeURIComponent(clientId)}&date=${encodeURIComponent(date)}`
     // Create the iframe
     const iframe = document.createElement("iframe");
@@ -48,8 +48,8 @@ function App() {
 
     // Once the iframe loads, send the message
     // iframe.addEventListener('load', () => {
-    //   const message = `${domain}/${clientId}/${month}/${year}`; // Construct the message using domain and clientId
-    //   iframe.contentWindow.postMessage(message, `http://localhost:${port}/`); // Send to the dynamic origin
+    //   const message = `${clientId}/${date}`; // Construct the message using domain and clientId
+    //   iframe.contentWindow.postMessage(message, `http://localhost:3000/`); // Send to the dynamic origin
     //   console.log("Message sent to iframe:", message); // Log for debugging
     // });
   };
