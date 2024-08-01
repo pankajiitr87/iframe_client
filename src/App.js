@@ -4,18 +4,18 @@ import { useRef, useEffect, useState } from 'react';
 function App() {
   const iframeRef = useRef(null); // Ref to store the iframe element
   // const iframeRef = useRef(null); // Ref to store the iframe element
-  const [domain, setDomain] = useState(""); // State to store the domain input
+  // const [domain, setDomain] = useState(""); // State to store the domain input
   const [clientId, setClientId] = useState(""); // State to store the clientId input
   const [month, setMonth] = useState("");
   const [year, setYear] = useState("")
-  const [port, setPort] = useState(""); // State to store the port input
-  const [date, setDate] = useState(""); // State to store the selected date
+  // const [port, setPort] = useState(""); // State to store the port input
+  // const [date, setDate] = useState(""); // State to store the selected date
 
   // Function to open the iframe and send a message
   const openFrameAndSendMessage = () => {
     
-    if (!date || !clientId) {
-      alert("Please enter a Client Id and Date");
+    if (!clientId || !month || !year) {
+      alert("Please enter a Client Id, Month, and Year");
       return;
     }
 
@@ -23,7 +23,7 @@ function App() {
     // for mongo database username and password --> pankajiitr87 and a3kwmdDoE9xGpi5n
     // const message = `${domain}/${clientId}/${month}/${year}`;
     // const iframeUrl = `http://localhost:3000/?message=${encodeURIComponent(message)}`;
-    const url = `https://bo-cilent.vercel.app/?clientId=${encodeURIComponent(clientId)}&date=${encodeURIComponent(date)}`
+    const url = `https://bo-cilent.vercel.app/?clientId=${encodeURIComponent(clientId)}&month=${encodeURIComponent(month)}&year=${encodeURIComponent(year)}`
     // Create the iframe
     const iframe = document.createElement("iframe");
     console.log('iframe =', iframe);
@@ -74,9 +74,16 @@ function App() {
           onChange={(e) => setClientId(e.target.value)} // Update the clientId state
         />
         <input 
-          type='date' 
-          value={date} 
-          onChange={(e) => setDate(e.target.value)} // Update the date state
+          type='text' 
+          placeholder='Type Month (MM) here' 
+          value={month} 
+          onChange={(e) => setMonth(e.target.value)} // Update the month state
+        />
+        <input 
+          type='text' 
+          placeholder='Type Year (YYYY) here' 
+          value={year} 
+          onChange={(e) => setYear(e.target.value)} // Update the year state
         />
         <button onClick={openFrameAndSendMessage}>Open IFRAME</button>
       </header>
